@@ -1,89 +1,113 @@
-# Enhanced YouTube Downloader (yt-dlp)
+# Modern YouTube Downloader
 
-A Python-based GUI application for downloading YouTube videos using yt-dlp with support for various quality options and subtitles.
+![YouTube Downloader Screenshot](screenshot.PNG)
+
+A sleek Python GUI application for downloading YouTube videos and playlists using yt-dlp with a modern CustomTkinter interface.
 
 ## Features
 
-- User-friendly graphical interface built with tkinter
-- Video quality selection with detailed format information
-- Subtitle/Caption download support
-- Thumbnail preview
-- Progress tracking
-- Support for various video formats and resolutions
-- Smart format sorting (prioritizes MP4, combined video+audio, higher resolutions)
-- Flexible download directory selection
+- 🎯 Modern, user-friendly GUI built with CustomTkinter
+- 🎥 Support for both single videos and playlists
+- 📋 Multiple quality options with detailed format information
+- 🎬 Video thumbnail preview
+- 📝 Subtitle/Caption download support
+- 🎵 Audio extraction with MP3 conversion option
+- 📊 Download progress tracking
+- 📁 Flexible download directory selection
+- 📝 Customizable filename templates
+- 🔄 Download archive support to skip previously downloaded items
 
 ## Requirements
 
 - Python 3.x
-- yt-dlp (`pip install yt-dlp`)
-- Pillow (`pip install Pillow`)
-- requests (`pip install requests`)
-- tkinter (usually comes with Python)
+- Required packages:
+  - yt-dlp
+  - customtkinter
+  - Pillow
+  - requests
+  - tkinter (usually comes with Python)
+- ffmpeg (optional, required for MP3 conversion)
 
 ## Installation
 
-1. Make sure you have Python installed on your system
+1. Ensure Python 3.x is installed on your system
 2. Install the required packages:
    ```bash
-   pip install yt-dlp Pillow requests
+   pip install yt-dlp customtkinter Pillow requests
    ```
-3. Clone or download this repository
-4. Run `youtube_downloader_gui.py`
+3. (Optional) Install ffmpeg for MP3 conversion:
+   - Windows: Download from [ffmpeg.org](https://ffmpeg.org/) and add to PATH
+   - Linux: `sudo apt install ffmpeg`
+   - macOS: `brew install ffmpeg`
 
 ## Usage
 
-1. Launch the application by running `youtube_downloader_gui.py`
-2. Paste a YouTube URL into the input field
-3. Click "Fetch Info" to get video details and available formats
-4. Select your desired video quality from the dropdown menu
-5. Optionally select subtitles if available
-6. Choose a download directory using the "Select Folder" button
-7. Click "Download Selected Quality" to start the download
+1. Run the application:
+   ```bash
+   python youtube_downloader_gui.py
+   ```
 
-## Features in Detail
+2. Enter a YouTube URL (video or playlist)
+3. Click "Fetch Info" to load video details
+4. Configure your download:
+   - Select video quality/format
+   - Choose subtitle language (if available)
+   - Enable audio-only mode if desired
+   - Set MP3 conversion (requires ffmpeg)
+   - Configure output filename template
+   - Enable download archive if needed
+5. Choose download location
+6. Click "Download" to start
 
-### Video Formats
+## Advanced Features
 
-- Automatically sorts and presents available formats with details like:
-  - Resolution
-  - File format
-  - File size (when available)
-  - Video+Audio/Video Only/Audio Only indicators
-  - Format-specific details (e.g., 60fps where applicable)
+### Quality Selection
+- Automatically sorts and displays available formats
+- Shows resolution, format, and file size
+- Indicates combined (video+audio) vs. separate streams
+- Special handling for high-quality formats (4K, 60fps)
+
+### Audio Options
+- Extract audio only
+- Convert to MP3 format (requires ffmpeg)
+- Best quality audio extraction
 
 ### Subtitle Support
+- Download subtitles in various languages
+- Support for both manual and auto-generated captions
+- Clear indication of subtitle source
 
-- Download subtitles in various languages (when available)
-- Supports both manual and auto-generated captions
-- Clear indication of auto-generated captions
+### Playlist Support
+- Download entire playlists
+- Skip already downloaded items using archive
+- Consistent quality selection across playlist
 
-### Download Management
-
-- Progress tracking
-- Status updates
-- Error handling with detailed messages
-- Background processing to keep UI responsive
-
-## Notes
-
-- The application requires an active internet connection
-- Download speeds depend on your internet connection and YouTube's servers
-- Some videos may have restricted formats or may not be available for download
-- The application uses yt-dlp which is regularly updated to handle YouTube changes
+### File Management
+- Custom filename templates using yt-dlp format codes
+- Download archive to track completed downloads
+- Flexible output directory selection
 
 ## Troubleshooting
 
-If you encounter any issues:
+If you encounter issues:
 
-1. Ensure yt-dlp is up to date:
+1. Update yt-dlp:
    ```bash
    pip install --upgrade yt-dlp
    ```
-2. Check if the YouTube URL is valid and accessible
-3. Verify you have write permissions in the selected download directory
-4. Check your internet connection
+
+2. Common solutions:
+   - Verify the YouTube URL is accessible
+   - Check internet connection
+   - Ensure write permissions in download directory
+   - For MP3 conversion, verify ffmpeg is installed
+   - For age-restricted videos, you may need to provide cookies
 
 ## License
 
 This project is open source and available for personal use.
+
+## Credits
+
+- Built with [CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
+- Powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp)
