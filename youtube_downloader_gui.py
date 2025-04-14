@@ -532,7 +532,7 @@ def clear_url_and_info():
 
 # --- GUI Setup using CustomTkinter ---
 app = ctk.CTk()
-app.title("Advanced YouTube Downloader (yt-dlp + CTk)")
+app.title("Advanced YouTube Downloader (vhr)")
 app.geometry("800x750")
 
 # --- Main Frame ---
